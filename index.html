@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Nav Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function(){
+
+        // Animate navbar sliding down on page load
+        $(".navbar").hide().slideDown(800);
+
+        // Animate heading text with fade in and slide effect
+        $("h1").hide().delay(500).fadeIn(1000).animate({
+            letterSpacing: "+=2px"
+        }, 500);
+
+        // Animate paragraph text in the section with a delay and sliding effect
+        $(".background-section p").hide().delay(1000).fadeIn(1500).animate({
+            fontSize: "50px"
+        }, 1000);
+
+        // Navbar hover effect with fadeToggle
+        $(".nav-item a").hover(function(){
+            $(this).fadeToggle(200).fadeToggle(200);
+        });
+
+        // Slide toggle effect for 'Add to Cart' button click
+        $(".add-to-cart").click(function(){
+            $(this).slideToggle(300).delay(300).slideToggle(300);
+        });
+
+        // Toggle footer visibility with slideToggle
+        $("#footer-content").click(function(){
+            $(this).slideToggle(400);
+        });
+    });
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a href="#">CRISPY CORNER</a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">About</a></li>
+            <li class="nav-item"><a href="#">Services</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
+        </ul>
+    </nav> 
+
+    <section class="background-section">
+        <p>Serving up a slice of heaven.</p>
+    </section>
+
+    <h1><center>Taste the bliss, one bite at a time.</center></h1>
+
+    <section class="destinations">
+        <div class="destination">
+            <img src="bur.jpg" alt="Burger">
+            <h2>Burger</h2>
+            <p>Life is too short to miss out on double cheeseburgers.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="destination">
+            <img src="mo.jpg" alt="Momos">
+            <h2>Momos</h2>
+            <p>In a world full of trends, be a momo lover.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="destination">
+            <img src="pi.jpg" alt="Pizza">
+            <h2>Pizza</h2>
+            <p>Surround yourself with pizza, not negativity.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </section>
+
+    <footer id="footer">
+        <div id="footer-content">
+            <p>&copy; 2024 Your Website. All rights reserved.</p>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
